@@ -6,7 +6,6 @@ let styles = require('./app.component.scss');
 
 @Component({
   selector: 'my-app',
-  // templateUrl: './app.component.html',
   template: `
     <div class='app-wrapper'>
       <header class='app-header'>

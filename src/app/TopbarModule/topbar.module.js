@@ -12,6 +12,9 @@ var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var topbar_component_1 = require('./TopbarComponent/topbar.component');
 var search_component_1 = require('./SearchComponent/search.component');
+var notifications_component_1 = require('./NotificationsComponent/notifications.component');
+var notifications_item_component_1 = require('./NotificationsItemComponent/notifications-item.component');
+var profile_component_1 = require('./ProfileComponent/profile.component');
 var TopbarModule = (function () {
     function TopbarModule() {
     }
@@ -19,10 +22,18 @@ var TopbarModule = (function () {
         core_1.NgModule({
             imports: [common_1.CommonModule],
             declarations: [
-                topbar_component_1.TopbarComponent, search_component_1.SearchComponent
+                topbar_component_1.TopbarComponent,
+                search_component_1.SearchComponent,
+                notifications_component_1.NotificationsComponent,
+                notifications_item_component_1.NotificationsItemComponent,
+                profile_component_1.ProfileComponent
             ],
             exports: [
-                topbar_component_1.TopbarComponent, search_component_1.SearchComponent
+                topbar_component_1.TopbarComponent,
+                search_component_1.SearchComponent,
+                notifications_component_1.NotificationsComponent,
+                notifications_item_component_1.NotificationsItemComponent,
+                profile_component_1.ProfileComponent
             ]
         }), 
         __metadata('design:paramtypes', [])

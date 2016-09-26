@@ -13,9 +13,9 @@ let styles = require('./topbar.component.scss');
     </div>
     <div class="topbar__search-notifs-wrapper">
       <div class="topbar__search-wrapper"><search></search></div>
-      <div class="topbar__notifs-wrapper"></div>
+      <div class="topbar__notifs-wrapper"><notifications></notifications></div>
     </div>
-    <div class="topbar__profile-wrapper"></div>
+    <div class="topbar__profile-wrapper"><profile></profile></div>
   </div>
   `,
   styles: [styles]

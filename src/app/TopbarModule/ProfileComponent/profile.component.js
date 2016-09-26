@@ -9,20 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var styles = require('./topbar.component.scss');
-var TopbarComponent = (function () {
-    function TopbarComponent() {
+var template = require('./profile.component.html');
+var styles = require('./profile.component.scss');
+var ProfileComponent = (function () {
+    function ProfileComponent() {
     }
-    TopbarComponent = __decorate([
+    ProfileComponent = __decorate([
         core_1.Component({
-            selector: 'topbar',
-            template: "\n  <div class=\"topbar\">\n    <div class=\"topbar__link-wrapper\">\n      <a href=\"#\" class=\"topbar__link\">\n        <h1 class=\"topbar__logo\">Dash<span class=\"topbar__logo_f-weight_thinner\">Board</span></h1>\n      </a>\n    </div>\n    <div class=\"topbar__search-notifs-wrapper\">\n      <div class=\"topbar__search-wrapper\"><search></search></div>\n      <div class=\"topbar__notifs-wrapper\"><notifications></notifications></div>\n    </div>\n    <div class=\"topbar__profile-wrapper\"><profile></profile></div>\n  </div>\n  ",
+            selector: 'profile',
+            template: template,
             styles: [styles]
         }), 
         __metadata('design:paramtypes', [])
-    ], TopbarComponent);
-    return TopbarComponent;
+    ], ProfileComponent);
+    return ProfileComponent;
 }());
-exports.TopbarComponent = TopbarComponent;
+exports.ProfileComponent = ProfileComponent;
 ;
-//# sourceMappingURL=topbar.component.js.map
+//# sourceMappingURL=profile.component.js.map
