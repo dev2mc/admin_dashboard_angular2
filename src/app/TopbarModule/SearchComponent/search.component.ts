@@ -16,8 +16,4 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     this.showMobInput = false;
   }
-
-  toggleMobInput(): void {
-    this.showMobInput = !this.showMobInput;
-  }
 }

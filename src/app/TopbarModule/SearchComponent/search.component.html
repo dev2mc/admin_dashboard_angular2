@@ -7,10 +7,10 @@
   </form>
 
   <form class="search__form search__form_device_mob" novalidate>
-    <button class="search__show-mob" (click)='toggleMobInput(); false'>
+    <button class="search__show-mob" (click)='showMobInput=!showMobInput; false'>
       <span class="search__label">Search...</span>
       <i class="fa fa-search search__icon" aria-hidden="true"></i>
     </button>
-    <input type="text" class="search__input search__input_device_mob search__input_is_hidden" placeholder="Search here..." autofocus [ngClass]="{search__input_is_visible: showMobInput, search__input_is_hidden: !showMobInput}">
+    <input type="text" class="search__input search__input_device_mob" placeholder="Search here..." autofocus *ngIf='showMobInput'>
   </form>
 </div>
