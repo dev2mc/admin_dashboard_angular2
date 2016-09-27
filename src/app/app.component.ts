@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import '../../public/scss/styles.scss';
+import '../../assets/scss/styles.scss';
 
 let styles = require('./app.component.scss');
-
 
 @Component({
   selector: 'my-app',

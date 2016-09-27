@@ -26,15 +26,15 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        loader: 'raw-loader'
+        loader: 'html'
       },
       {
         test: /\.(png|jpe?g|gif|ico)$/,
-        loader: 'file?name=assets/[name].[hash].[ext]'
+        loader: 'file?name=assets/images/[name].[hash].[ext]'
       },
       {
         test: /\.(ttf|eot|otf|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-        loader: 'file'
+        loader: 'file?name=assets/fonts/[name].[hash].[ext]'
       },
       {
         test: /\.scss$/,

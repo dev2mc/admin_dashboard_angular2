@@ -1,11 +1,32 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
+import {By} from '@angular/platform-browser';
+import {DebugElement} from '@angular/core';
+
 import { AppComponent } from './app.component';
-describe('App', () => {
+import {TopbarModule} from './TopbarModule/topbar.module';
+
+describe('AppComponent: ', () => {
+  let fixture: ComponentFixture<AppComponent>;
+  let comp: AppComponent;
+
   beforeEach(() => {
-    TestBed.configureTestingModule({ declarations: [AppComponent]});
+    TestBed.configureTestingModule({
+      imports: [TopbarModule],
+      declarations: [AppComponent]
+     });
+
+    fixture = TestBed.createComponent(AppComponent);
+    comp = fixture.componentInstance;
   });
-  it ('should work', () => {
-    let fixture = TestBed.createComponent(AppComponent);
-    expect(fixture.componentInstance instanceof AppComponent).toBe(true, 'should create AppComponent');
+
+  it ('should be created', () => {
+    expect(comp instanceof AppComponent).toBe(true, 'should create AppComponent');
+  });
+
+  it('should contain "topbar" component', () => {
+    let debugTopbar: DebugElement = fixture.debugElement.query(By.css('topbar'));
+    let elemTopbar: HTMLElement = debugTopbar.nativeElement;
+
+    expect(elemTopbar).toBeDefined();
   });
 });
