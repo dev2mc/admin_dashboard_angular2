@@ -23,8 +23,8 @@ describe('AppComponent: ', () => {
     expect(comp instanceof AppComponent).toBe(true, 'should create AppComponent');
   });
 
-  it('should contain "topbar" component', () => {
-    let debugTopbar: DebugElement = fixture.debugElement.query(By.css('topbar'));
+  it('should contain element with class ".topbar"', () => {
+    let debugTopbar: DebugElement = fixture.debugElement.query(By.css('.topbar'));
     let elemTopbar: HTMLElement = debugTopbar.nativeElement;
 
     expect(elemTopbar).toBeDefined();
