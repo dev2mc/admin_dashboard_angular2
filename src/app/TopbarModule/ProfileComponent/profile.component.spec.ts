@@ -4,7 +4,7 @@ import {DebugElement} from '@angular/core';
 
 import { ProfileComponent } from './profile.component';
 
-describe('AppComponent: ', () => {
+describe('ProfileComponent: ', () => {
   let fixture: ComponentFixture<ProfileComponent>;
   let comp: ProfileComponent;
 
