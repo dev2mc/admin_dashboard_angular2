@@ -3,3 +3,5 @@ bower_components/
 dist/
 dist1/
 .idea/
+src/**/*.js
+src/**/*.js.map
