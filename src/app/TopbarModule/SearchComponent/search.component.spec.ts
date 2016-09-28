@@ -42,6 +42,7 @@ describe('Search Component: ', () => {
 
   describe('when showMobInput property is truthy: ', () => {
     beforeEach(() => {
+      fixture.detectChanges();
       comp.showMobInput = true;
       fixture.detectChanges();
     })
@@ -56,6 +57,12 @@ describe('Search Component: ', () => {
       let elemSearchShowMob: HTMLElement = fixture.debugElement.query(By.css('.search__show-mob')).nativeElement;
 
       expect(elemSearchShowMob).toBeDefined();
+    })
+
+    it('element with class "search__input_device_mob" should appear', () => {
+      let elemSearchInputMob: HTMLElement = fixture.debugElement.query(By.css('.search__input_device_mob')).nativeElement;
+
+      expect(elemSearchInputMob).toBeDefined();
     })
   });
 });

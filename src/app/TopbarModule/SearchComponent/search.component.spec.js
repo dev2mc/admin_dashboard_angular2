@@ -29,6 +29,7 @@ describe('Search Component: ', function () {
     });
     describe('when showMobInput property is truthy: ', function () {
         beforeEach(function () {
+            fixture.detectChanges();
             comp.showMobInput = true;
             fixture.detectChanges();
         });
@@ -39,6 +40,10 @@ describe('Search Component: ', function () {
         it('element with class "search__show-mob" should appear', function () {
             var elemSearchShowMob = fixture.debugElement.query(platform_browser_1.By.css('.search__show-mob')).nativeElement;
             expect(elemSearchShowMob).toBeDefined();
+        });
+        it('element with class "search__input_device_mob" should appear', function () {
+            var elemSearchInputMob = fixture.debugElement.query(platform_browser_1.By.css('.search__input_device_mob')).nativeElement;
+            expect(elemSearchInputMob).toBeDefined();
         });
     });
 });
