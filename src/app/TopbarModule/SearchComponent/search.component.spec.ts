@@ -58,6 +58,7 @@ describe('Search Component: ', () => {
 
       expect(elemSearchShowMob).toBeDefined();
     })
+    
 
     it('element with class "search__input_device_mob" should appear', () => {
       let elemSearchInputMob: HTMLElement = fixture.debugElement.query(By.css('.search__input_device_mob')).nativeElement;
