@@ -4,4 +4,4 @@ dist/
 dist1/
 .idea/
 src/**/*.js
-src/**/*.js.map
+src/**/*.map
