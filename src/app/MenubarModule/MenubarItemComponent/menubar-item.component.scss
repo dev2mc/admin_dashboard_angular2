@@ -1,0 +1,76 @@
+@import '../../../../assets/scss/utils/colors';
+
+$menubar-item-col: color(gray-chateau);
+$menubar-item---icon-col: $menubar-item-col;
+$menubar-item---name-col: $menubar-item-col;
+$menubar-item---goto-col: $menubar-item-col;
+$menubar-item---badge-col: color(white-col);
+$menubar-item---badge-bg-col: color(piper);
+
+//---menubar-item---
+//------------------
+.menubar-item {
+  margin-bottom: 16px;
+}
+
+//---menubar-item__link---
+//------------------------
+.menubar-item__link {
+  display: flex;
+  position: relative;
+  align-items: center;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+//---menubar-item__icon---
+//------------------------
+.menubar-item__icon {
+  margin-right: 22px;
+
+  color: $menubar-item---icon-col;
+  font-size: 20px !important;
+}
+
+//---menubar-item__name---
+//------------------------
+.menubar-item__name {
+  margin: 0;
+  padding: 0;
+
+  color: $menubar-item---name-col;
+  font-family: 'HelveticaNeueLTStd Roman';
+  font-size: 12px;
+  line-height: 1;
+  text-transform: capitalize;
+}
+
+//---menubar-item__name---
+//------------------------
+.menubar-item__goto {
+  margin-left: auto;
+
+  color: $menubar-item---goto-col;
+  font-size: 14px !important;
+}
+
+//---menubar-item__badge---
+//-------------------------
+.menubar-item__badge {
+  position: absolute;
+  top: 0;
+  right: 29px;
+  width: 24px;
+
+  border-radius: 7px;
+
+  background: $menubar-item---badge-bg-col;
+
+  color: $menubar-item---badge-col;
+  font-family: 'HelveticaNeueLTStd Bold';
+  font-size: 14px;
+  font-style: normal;
+  text-align: center;
+}
