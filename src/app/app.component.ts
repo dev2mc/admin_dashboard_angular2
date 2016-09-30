@@ -12,7 +12,7 @@ let styles = require('./app.component.scss');
       </header>
       <div class='content-wrapper'>
         <aside class='app-aside'>
-
+          <menubar></menubar>
         </aside>
         <main class='app-main'>
 

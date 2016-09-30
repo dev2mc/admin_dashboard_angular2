@@ -8,6 +8,7 @@ describe('MenubarItemComponent: ', () => {
   let name: string;
   let link: string;
   let number: string|boolean;
+  let collapse: boolean;
 
   let fixture: ComponentFixture<MenubarItemComponent>;
   let comp: MenubarItemComponent;
@@ -17,6 +18,7 @@ describe('MenubarItemComponent: ', () => {
     name = 'comment';
     link = '#';
     number = '9';
+    collapse = false;
 
     TestBed.configureTestingModule({
       declarations: [MenubarItemComponent]
@@ -29,6 +31,7 @@ describe('MenubarItemComponent: ', () => {
     comp.name = name;
     comp.link = link;
     comp.number = number;
+    comp.collapse = collapse;
     fixture.detectChanges();
   });
 
@@ -61,5 +64,15 @@ describe('MenubarItemComponent: ', () => {
     let elemNumber = fixture.debugElement.query(By.css('.menubar-item')).nativeElement.querySelector('.menubar-item__badge');
 
     expect(elemNumber).toEqual(null);
+  });
+
+  it('class "menubar-item_view_collapsed" should be added to element "menubar-item" when comp.collapse is truthy', () => {
+    let classCollapsedItem = 'menubar-item_view_collapsed';
+    comp.collapse = true;
+    fixture.detectChanges();
+
+    let elemItemClass = fixture.debugElement.query(By.css('.menubar-item')).nativeElement.className;
+
+    expect(elemItemClass.indexOf(classCollapsedItem) > -1).toBeTruthy();
   });
 });

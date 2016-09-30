@@ -74,3 +74,24 @@ $menubar-item---badge-bg-col: color(piper);
   font-style: normal;
   text-align: center;
 }
+
+.menubar-item_view_collapsed {
+  .menubar-item__icon {
+    margin-right: 5px;
+  }
+
+  .menubar-item__name {
+    display: none;
+  }
+
+  .menubar-item__goto {
+    display: none;
+  }
+
+  .menubar-item__badge {
+    right: -6px;
+    width: 13px;
+    font-family: 'HelveticaNeueLTStd Light';
+    font-size: 12px;
+  }
+}

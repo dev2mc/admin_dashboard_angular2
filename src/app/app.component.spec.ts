@@ -4,6 +4,7 @@ import {DebugElement} from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {TopbarModule} from './TopbarModule/topbar.module';
+import {MenubarModule} from './MenubarModule/menubar.module';
 
 describe('AppComponent: ', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -11,7 +12,7 @@ describe('AppComponent: ', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [TopbarModule],
+      imports: [TopbarModule, MenubarModule],
       declarations: [AppComponent]
      });
 
