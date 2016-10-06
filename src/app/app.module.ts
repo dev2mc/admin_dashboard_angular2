@@ -2,21 +2,29 @@ import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
+import {routing} from './app.routing';
+
 import {TopbarModule} from './TopbarModule/topbar.module';
 import {MenubarModule} from './MenubarModule/menubar.module';
+import {TasksModule} from './TasksModule/tasks.module';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {NotFoundComponent} from './shared/404Component/404.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     CommonModule,
 
+    routing,
+
     TopbarModule,
-    MenubarModule
+    MenubarModule,
+    TasksModule
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    NotFoundComponent
   ],
   bootstrap: [ AppComponent ]
 })

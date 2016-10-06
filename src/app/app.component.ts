@@ -15,7 +15,7 @@ let styles = require('./app.component.scss');
           <menubar></menubar>
         </aside>
         <main class='app-main'>
-
+          <router-outlet></router-outlet>
         </main>
       </div>
   <div>

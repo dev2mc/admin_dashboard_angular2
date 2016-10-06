@@ -16,25 +16,33 @@ export class TasksService {
   getTasks(): Promise<Task[]> {
     return this.http.get(`${this._uri}?apiKey=${this._apiKey}`)
       .toPromise()
-      .then(response => response.json().data as Task[]);
+      .then((response: any) => {
+        return JSON.parse(response._body);
+      });
   };
 
   addTask(task: Task): Promise<Task> {
     return this.http.post(`${this._uri}?apiKey=${this._apiKey}`, JSON.stringify(task), {headers: this.headers})
       .toPromise()
-      .then(response => response.json().data);
+      .then((response: any) => {
+        return JSON.parse(response._body);
+      });
   };
 
   updateTask(task: Task): Promise<Task> {
     let id = task._id.$oid;
     return this.http.put(`${this._uri}/${id}?apiKey=${this._apiKey}`, JSON.stringify(task), {headers: this.headers})
       .toPromise()
-      .then(response => response.json().data);
+      .then((response: any) => {
+        return JSON.parse(response._body);
+      });
   };
 
   deleteTask(id: string): Promise<Task> {
     return this.http.delete(`${this._uri}/${id}?apiKey=${this._apiKey}`, {headers: this.headers})
       .toPromise()
-      .then(response => response.json().data);
+      .then((response: any) => {
+        return JSON.parse(response._body);
+      });
   };
 };

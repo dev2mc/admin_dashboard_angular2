@@ -25,7 +25,8 @@ $topbar---font-col: color(whisper);
 //---topbar__link---
 //------------------
 .topbar__link {
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: none;
   }
 }

@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {RouterModule} from '@angular/router';
 
 import {MenubarComponent} from './MenubarComponent/menubar.component';
 import {MenubarItemComponent} from './MenubarItemComponent/menubar-item.component';
@@ -7,7 +8,10 @@ import {MenubarItemComponent} from './MenubarItemComponent/menubar-item.componen
 import {WindowRefService} from '../shared/WindowRefService/window-ref.service';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    RouterModule
+  ],
   declarations: [
     MenubarComponent,
     MenubarItemComponent

@@ -18,8 +18,21 @@ interface menuItem {
   styles: [styles],
 })
 export class MenubarComponent implements OnInit {
-  menuDataArr: menuItem[];
-  collapsed: boolean;
+  menuDataArr: menuItem[] = [
+    {
+      icon: 'fa-tasks',
+      name: 'tasks',
+      link: 'tasks',
+      number: false
+    },
+    {
+      icon: 'fa-comment',
+      name: 'comment',
+      link: 'comments',
+      number: '9'
+    }
+  ];
+  collapsed: boolean = false;
 
   constructor(private winRef: WindowRefService, private zone: NgZone){};
 
@@ -34,22 +47,6 @@ export class MenubarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.collapsed = false;
-    this.menuDataArr = [
-      {
-        icon: 'fa-tasks',
-        name: 'tasks',
-        link: '#',
-        number: false
-      },
-      {
-        icon: 'fa-comment',
-        name: 'comment',
-        link: '#',
-        number: '9'
-      }
-    ];
-
     this.winRef.nativeWindow.addEventListener('resize', this.resizeMenubar.bind(this));
     this.resizeMenubar();
   }

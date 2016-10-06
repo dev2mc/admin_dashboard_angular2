@@ -123,7 +123,7 @@ linters:
     enabled: true
     ignore_unspecified: false
     min_properties: 1
-    separate_groups: true
+    separate_groups: false
     order: smacss
 
   PropertySpelling:
@@ -163,7 +163,7 @@ linters:
 
   Shorthand:
     enabled: true
-    allowed_shorthands: [1, 2, 3]
+    allowed_shorthands: [1, 2, 3, 4, 5, 6]
 
   SingleLinePerProperty:
     enabled: true

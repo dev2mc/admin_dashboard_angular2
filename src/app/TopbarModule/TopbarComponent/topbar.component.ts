@@ -7,7 +7,7 @@ let styles = require('./topbar.component.scss');
   template: `
   <div class="topbar">
     <div class="topbar__link-wrapper">
-      <a href="#" class="topbar__link">
+      <a routerLink="/" class="topbar__link">
         <h1 class="topbar__logo">Dash<span class="topbar__logo_f-weight_thinner">Board</span></h1>
       </a>
     </div>

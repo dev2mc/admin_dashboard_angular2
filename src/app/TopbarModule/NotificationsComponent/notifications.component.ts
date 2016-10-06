@@ -28,12 +28,12 @@ export class NotificationsComponent implements OnInit {
     this.notificationsData = [
       {
         type: 'comment',
-        link: '#',
+        link: 'comments',
         quantity: 9
       },
       {
         type: 'email',
-        link: '#',
+        link: 'email',
         quantity: 1
       }
     ];

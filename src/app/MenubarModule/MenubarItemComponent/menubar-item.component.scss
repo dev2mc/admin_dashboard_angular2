@@ -20,7 +20,8 @@ $menubar-item---badge-bg-col: color(piper);
   position: relative;
   align-items: center;
 
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: none;
   }
 }
