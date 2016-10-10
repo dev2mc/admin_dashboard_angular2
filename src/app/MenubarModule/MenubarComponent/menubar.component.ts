@@ -26,10 +26,64 @@ export class MenubarComponent implements OnInit {
       number: false
     },
     {
+      icon: 'fa-tachometer',
+      name: 'dashboard',
+      link: 'dashboard',
+      number: false
+    },
+    {
+      icon: 'fa-bar-chart',
+      name: 'charts',
+      link: 'charts',
+      number: false
+    },
+    {
       icon: 'fa-comment',
       name: 'comment',
       link: 'comments',
       number: '9'
+    },
+    {
+      icon: 'fa-cog',
+      name: 'settings',
+      link: 'settings',
+      number: false
+    },
+    {
+      icon: 'fa-star',
+      name: 'feedback',
+      link: 'feedback',
+      number: false
+    },
+    {
+      icon: 'fa-link',
+      name: 'links',
+      link: 'links',
+      number: false
+    },
+    {
+      icon: 'fa-share-alt',
+      name: 'social',
+      link: 'social',
+      number: false
+    },
+    {
+      icon: 'fa-envelope',
+      name: 'mail',
+      link: 'mail',
+      number: false
+    },
+    {
+      icon: 'fa-trophy',
+      name: 'achievement',
+      link: 'achievement',
+      number: false
+    },
+    {
+      icon: 'fa-power-off',
+      name: 'logout',
+      link: 'logout',
+      number: false
     }
   ];
   collapsed: boolean = false;
