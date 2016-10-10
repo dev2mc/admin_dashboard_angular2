@@ -4,6 +4,11 @@ import {DebugElement} from '@angular/core';
 
 import {NotificationsItemComponent} from './notifications-item.component';
 
+import {RouterLinkStubDirective} from '../../../../testing/router-link-stub.directive';
+
+import {TopbarModule} from '../topbar.module';
+import {routing} from '../../app.routing';
+
 describe('NotificationsItemComponent: ', () => {
   let type: string;
   let link: string;
@@ -14,11 +19,11 @@ describe('NotificationsItemComponent: ', () => {
 
   beforeEach(() => {
     type = 'comment';
-    link = '#';
+    link = 'comments';
     quantity = '9';
 
     TestBed.configureTestingModule({
-      declarations: [NotificationsItemComponent]
+      declarations: [NotificationsItemComponent, RouterLinkStubDirective]
     });
 
     fixture = TestBed.createComponent(NotificationsItemComponent);
@@ -42,10 +47,11 @@ describe('NotificationsItemComponent: ', () => {
     expect(elemNotifItem).toBeDefined();
   });
 
-  it('element "notifications-item__link" should contain an attribute "href" which value should be equal to link property passed into the component', () => {
-    let hrefAttr = fixture.debugElement.query(By.css('.notifications-item__link')).nativeElement.getAttribute('href');
+  it('element "notifications-item__link" should contain an attribute "routerLink" which value should be equal to link property passed into the component', () => {
+    let routerLink = fixture.debugElement.query(By.css('.notifications-item__link')).injector.get(RouterLinkStubDirective) as RouterLinkStubDirective;
 
-    expect(hrefAttr).toEqual(link);
+    console.log(routerLink.linkParams);
+    expect(routerLink.linkParams).toEqual(`/${link}`);
   });
 
   it('element "notifications-item__quantity" should contain an text which should be equal to quantity property passed into the component', () => {
