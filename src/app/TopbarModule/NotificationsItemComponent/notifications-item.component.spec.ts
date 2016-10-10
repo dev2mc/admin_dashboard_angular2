@@ -7,7 +7,6 @@ import {NotificationsItemComponent} from './notifications-item.component';
 import {RouterLinkStubDirective} from '../../../../testing/router-link-stub.directive';
 
 import {TopbarModule} from '../topbar.module';
-import {routing} from '../../app.routing';
 
 describe('NotificationsItemComponent: ', () => {
   let type: string;
@@ -50,7 +49,6 @@ describe('NotificationsItemComponent: ', () => {
   it('element "notifications-item__link" should contain an attribute "routerLink" which value should be equal to link property passed into the component', () => {
     let routerLink = fixture.debugElement.query(By.css('.notifications-item__link')).injector.get(RouterLinkStubDirective) as RouterLinkStubDirective;
 
-    console.log(routerLink.linkParams);
     expect(routerLink.linkParams).toEqual(`/${link}`);
   });
 
