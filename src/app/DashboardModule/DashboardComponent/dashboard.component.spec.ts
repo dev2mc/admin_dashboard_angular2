@@ -29,4 +29,10 @@ describe('DashboardComponent: ', () => {
 
     expect(updateEls.length).toEqual(4);
   });
+
+  it('element "yearly-sales" should be present', () => {
+    let yearlySales = fixture.debugElement.query(By.css('yearly-sales')).nativeElement;
+
+    expect(yearlySales).toBeDefined();
+  });
 });

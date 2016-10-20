@@ -4,6 +4,7 @@ import {FormsModule}   from '@angular/forms';
 
 import {DashboardComponent} from './DashboardComponent/dashboard.component';
 import {UpdateComponent} from './UpdateComponent/update.component';
+import {YearlySalesComponent} from '../shared/YearlySalesComponent/yearly-sales.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import {UpdateComponent} from './UpdateComponent/update.component';
   ],
   declarations: [
     DashboardComponent,
-    UpdateComponent
+    UpdateComponent,
+    YearlySalesComponent
   ],
   exports: [
     DashboardComponent

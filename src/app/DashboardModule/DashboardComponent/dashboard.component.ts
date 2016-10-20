@@ -15,4 +15,8 @@ export class DashboardComponent {
   sales: number = 13140;
   visitors: number = 9001;
   messages: number = 350;
+
+  yearlySales: number = 530.030;
+  yearlyVisitors: number = 4204284;
+  yearlyCustomers: number = 42000;
 }
