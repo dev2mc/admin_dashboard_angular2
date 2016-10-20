@@ -1,0 +1,40 @@
+@import '../../../../assets/scss/utils/colors';
+
+$dashboard-bg-col: color(wild-sand);
+
+//---dashboard---
+//---------------
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 27px 32px;
+
+  background: $dashboard-bg-col;
+
+  > * {
+    margin-bottom: 26px;
+  }
+}
+
+//
+// .graph-site-stats {
+//   width: 620px;
+//   height: 390px;
+//
+//   background: blue;
+// }
+//
+// .graph-sales {
+//   width: 325px;
+//   height: 390px;
+//
+//   background: red;
+// }
+//
+// .todo {
+//   width: 620px;
+//   height: 300px;
+//
+//   background: yellow;
+// }
