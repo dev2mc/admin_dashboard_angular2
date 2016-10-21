@@ -7,7 +7,8 @@
   <yearly-sales [sales]='yearlySales' [visitors]='yearlyVisitors' [customers]='yearlyCustomers'></yearly-sales>
 
   <weather [type]='weatherType' [temperature]='weatherTemperature' [location]='weatherLocation'></weather>
-  <!-- <div class="update"></div>
-  <div class="graph-site-stats"></div>
-  <div class="graph-sales"></div> -->
+
+  <data-widget [type]='"hosting"' [max]='hostingMax' [count]='hostingCount'></data-widget>
+  <data-widget [type]='"email"' [max]='emailMax' [count]='emailCount'></data-widget>
+
 </div>

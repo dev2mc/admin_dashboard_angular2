@@ -35,4 +35,16 @@ describe('DashboardComponent: ', () => {
 
     expect(yearlySales).toBeDefined();
   });
+
+  it('element ".weather" should be present', () => {
+    let weather = fixture.debugElement.query(By.css('.weather')).nativeElement;
+
+    expect(weather).toBeDefined();
+  });
+
+  it('elements with class "data-widget" should be present', () => {
+    let dataWidgets = fixture.debugElement.query(By.css('.dashboard')).nativeElement.querySelectorAll('.data-widget');
+
+    expect(dataWidgets.length).toEqual(2)
+  });
 });

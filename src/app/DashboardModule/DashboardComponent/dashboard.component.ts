@@ -23,4 +23,9 @@ export class DashboardComponent {
   weatherType: string = 'sunny';
   weatherTemperature: number = 25;
   weatherLocation: string = 'texas';
+
+  hostingCount: number = 113;
+  hostingMax: number = 200;
+  emailCount: number = 535;
+  emailMax: number = 986;
 }
