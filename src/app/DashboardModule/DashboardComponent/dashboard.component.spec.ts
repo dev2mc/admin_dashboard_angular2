@@ -24,14 +24,14 @@ describe('DashboardComponent: ', () => {
     expect(comp instanceof DashboardComponent).toBe(true, 'should create MenubarComponent')
   });
 
-  it('there shoudl be 4 update elements', () => {
-    let updateEls = fixture.debugElement.query(By.css('.dashboard')).nativeElement.querySelectorAll('update');
+  it('there shoudl be 4 ".update" elements', () => {
+    let updateEls = fixture.debugElement.query(By.css('.dashboard')).nativeElement.querySelectorAll('.update');
 
     expect(updateEls.length).toEqual(4);
   });
 
-  it('element "yearly-sales" should be present', () => {
-    let yearlySales = fixture.debugElement.query(By.css('yearly-sales')).nativeElement;
+  it('element ".yearly-sales" should be present', () => {
+    let yearlySales = fixture.debugElement.query(By.css('.yearly-sales')).nativeElement;
 
     expect(yearlySales).toBeDefined();
   });

@@ -5,6 +5,7 @@ import {FormsModule}   from '@angular/forms';
 import {DashboardComponent} from './DashboardComponent/dashboard.component';
 import {UpdateComponent} from './UpdateComponent/update.component';
 import {YearlySalesComponent} from '../shared/YearlySalesComponent/yearly-sales.component';
+import {WeatherComponent} from './WeatherComponent/weather.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import {YearlySalesComponent} from '../shared/YearlySalesComponent/yearly-sales.
   declarations: [
     DashboardComponent,
     UpdateComponent,
-    YearlySalesComponent
+    YearlySalesComponent,
+    WeatherComponent
   ],
   exports: [
     DashboardComponent

@@ -19,4 +19,8 @@ export class DashboardComponent {
   yearlySales: number = 530.030;
   yearlyVisitors: number = 4204284;
   yearlyCustomers: number = 42000;
+
+  weatherType: string = 'sunny';
+  weatherTemperature: number = 25;
+  weatherLocation: string = 'texas';
 }
