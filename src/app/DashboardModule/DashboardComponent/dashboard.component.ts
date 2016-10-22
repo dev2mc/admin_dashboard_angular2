@@ -28,4 +28,8 @@ export class DashboardComponent {
   hostingMax: number = 200;
   emailCount: number = 535;
   emailMax: number = 986;
+
+  notificationsTwitter: number = 5;
+  notificationsEmail: number = 10;
+  notificationsMoney: number = 400;
 }

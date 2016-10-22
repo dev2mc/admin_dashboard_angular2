@@ -47,4 +47,10 @@ describe('DashboardComponent: ', () => {
 
     expect(dataWidgets.length).toEqual(2)
   });
+
+  it('element ".notifications-widget" should be present', () => {
+    let widget = fixture.debugElement.query(By.css('.notifications-widget')).nativeElement;
+
+    expect(widget).toBeDefined();
+  });
 });
