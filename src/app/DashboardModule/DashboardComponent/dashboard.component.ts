@@ -32,4 +32,6 @@ export class DashboardComponent {
   notificationsTwitter: number = 5;
   notificationsEmail: number = 10;
   notificationsMoney: number = 400;
+
+  dataGraphEarnings: number = 433.22;
 }

@@ -8,6 +8,7 @@ import {YearlySalesComponent} from '../shared/YearlySalesComponent/yearly-sales.
 import {WeatherComponent} from './WeatherComponent/weather.component';
 import {DataWidgetComponent} from './DataWidgetComponent/data-widget.component';
 import {NotificationsWidgetComponent} from './NotificationsWidgetComponent/notifications-widget.component';
+import {DataGraphComponent} from './DataGraphComponent/data-graph.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import {NotificationsWidgetComponent} from './NotificationsWidgetComponent/notif
     YearlySalesComponent,
     WeatherComponent,
     DataWidgetComponent,
-    NotificationsWidgetComponent
+    NotificationsWidgetComponent,
+    DataGraphComponent
   ],
   exports: [
     DashboardComponent
