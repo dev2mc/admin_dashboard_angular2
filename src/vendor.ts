@@ -14,3 +14,6 @@ import 'lodash.uniq';
 //modernizr css filters check
 import cssFilters from '../assets/javascript/libs/modernizr-cssfilters';
 cssFilters(window,document);
+
+//Moment.js - Parse, validate, manipulate, and display dates in JavaScript.
+import 'moment';

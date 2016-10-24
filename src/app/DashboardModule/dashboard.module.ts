@@ -9,6 +9,7 @@ import {WeatherComponent} from './WeatherComponent/weather.component';
 import {DataWidgetComponent} from './DataWidgetComponent/data-widget.component';
 import {NotificationsWidgetComponent} from './NotificationsWidgetComponent/notifications-widget.component';
 import {DataGraphComponent} from './DataGraphComponent/data-graph.component';
+import {CalendarComponent} from './CalendarComponent/calendar.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import {DataGraphComponent} from './DataGraphComponent/data-graph.component';
     WeatherComponent,
     DataWidgetComponent,
     NotificationsWidgetComponent,
-    DataGraphComponent
+    DataGraphComponent,
+    CalendarComponent
   ],
   exports: [
     DashboardComponent

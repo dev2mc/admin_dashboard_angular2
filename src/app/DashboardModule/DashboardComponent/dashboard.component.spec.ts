@@ -53,4 +53,10 @@ describe('DashboardComponent: ', () => {
 
     expect(widget).toBeDefined();
   });
+
+  it('element ".calendar" should be present', () => {
+    let calendar = fixture.debugElement.query(By.css('.calendar')).nativeElement;
+
+    expect(calendar).toBeDefined();
+  });
 });
