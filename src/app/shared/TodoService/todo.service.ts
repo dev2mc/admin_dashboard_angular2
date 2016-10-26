@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Headers, Http} from '@angular/http';
 
-import 'rxjs/add/operator/toPromsie';
+import 'rxjs/add/operator/toPromise';
 
 import {Todo} from '../TodoObjInterface/todo-obj.interface';
 
@@ -36,4 +36,13 @@ export class TodoService {
         return JSON.parse(response._body);
       });
   };
+
+  toggleComplete(todo: Todo): Promise<Todo> {
+    let id = todo._id.$oid;
+    return this.http.put(`${this._uri}/${id}?apiKey=${this._apiKey}`, JSON.stringify(todo), {headers: this.headers})
+      .toPromise()
+      .then((response: any) => {
+        return JSON.parse(response._body);
+      });
+  }
 };

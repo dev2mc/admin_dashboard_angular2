@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule}   from '@angular/forms';
+import {HttpModule, JsonpModule} from '@angular/http';
 
 import {DashboardComponent} from './DashboardComponent/dashboard.component';
 import {UpdateComponent} from './UpdateComponent/update.component';
@@ -10,11 +11,16 @@ import {DataWidgetComponent} from './DataWidgetComponent/data-widget.component';
 import {NotificationsWidgetComponent} from './NotificationsWidgetComponent/notifications-widget.component';
 import {DataGraphComponent} from './DataGraphComponent/data-graph.component';
 import {CalendarComponent} from './CalendarComponent/calendar.component';
+import {TodoComponent} from './TodoComponent/todo.component';
+
+import {TodoService} from '../shared/TodoService/todo.service';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    HttpModule,
+    JsonpModule
   ],
   declarations: [
     DashboardComponent,
@@ -24,7 +30,11 @@ import {CalendarComponent} from './CalendarComponent/calendar.component';
     DataWidgetComponent,
     NotificationsWidgetComponent,
     DataGraphComponent,
-    CalendarComponent
+    CalendarComponent,
+    TodoComponent
+  ],
+  providers: [
+    TodoService
   ],
   exports: [
     DashboardComponent

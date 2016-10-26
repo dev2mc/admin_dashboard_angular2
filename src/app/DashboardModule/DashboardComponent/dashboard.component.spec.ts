@@ -59,4 +59,10 @@ describe('DashboardComponent: ', () => {
 
     expect(calendar).toBeDefined();
   });
+
+  it('element with class ".todo" should be present', () => {
+    let todo = fixture.debugElement.query(By.css('.todo')).nativeElement;
+
+    expect(todo).toBeDefined();
+  });
 });
