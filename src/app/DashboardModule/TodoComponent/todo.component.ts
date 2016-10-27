@@ -30,6 +30,7 @@ export class TodoComponent implements OnInit {
     return this.todoService.getTodos()
       .then((data) => {
         this.todos = data;
+        this.cd.detectChanges();
         return this.todos;
       });
   };
