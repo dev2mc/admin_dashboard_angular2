@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ChangeDetectorRef} from '@angular/core';
 
 import {TodoService} from '../../shared/TodoService/todo.service';
 
@@ -20,7 +20,7 @@ export class TodoComponent implements OnInit {
     completed: false
   };
 
-  constructor(private todoService:TodoService){};
+  constructor(private todoService:TodoService, private cd:ChangeDetectorRef){};
 
   ngOnInit() {
     this.getTodos();
@@ -38,6 +38,7 @@ export class TodoComponent implements OnInit {
     return this.todoService.addTodo(todo)
       .then((data) => {
         this.todos.push(data);
+        this.cd.detectChanges();
         return data;
       });
   };
@@ -51,6 +52,7 @@ export class TodoComponent implements OnInit {
             break;
           }
         }
+        this.cd.detectChanges();
         return data;
       });
   };
@@ -70,6 +72,7 @@ export class TodoComponent implements OnInit {
     if (complTodo) {
       return this.todoService.toggleComplete(complTodo).then((data:Todo) => {
         this.todos[complTodoInd] = Object.assign({}, data);
+        this.cd.detectChanges();
       });
     }
   };
