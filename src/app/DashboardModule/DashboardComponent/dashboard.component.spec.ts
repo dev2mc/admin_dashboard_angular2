@@ -65,4 +65,10 @@ describe('DashboardComponent: ', () => {
 
     expect(todo).toBeDefined();
   });
+
+  it('element with class "chart-stats" should be present', () => {
+    let chart = fixture.debugElement.query(By.css('.chart-stats')).nativeElement;
+
+    expect(chart).toBeDefined();
+  });
 });

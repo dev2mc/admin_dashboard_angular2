@@ -3,6 +3,8 @@ import {CommonModule} from '@angular/common';
 import {FormsModule}   from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
 
+import {ChartsModule} from 'ng2-charts/ng2-charts';
+
 import {DashboardComponent} from './DashboardComponent/dashboard.component';
 import {UpdateComponent} from './UpdateComponent/update.component';
 import {YearlySalesComponent} from '../shared/YearlySalesComponent/yearly-sales.component';
@@ -12,6 +14,7 @@ import {NotificationsWidgetComponent} from './NotificationsWidgetComponent/notif
 import {DataGraphComponent} from './DataGraphComponent/data-graph.component';
 import {CalendarComponent} from './CalendarComponent/calendar.component';
 import {TodoComponent} from './TodoComponent/todo.component';
+import {ChartStatsComponent} from './ChartStatsComponent/chart-stats.component';
 
 import {TodoService} from '../shared/TodoService/todo.service';
 
@@ -20,7 +23,8 @@ import {TodoService} from '../shared/TodoService/todo.service';
     CommonModule,
     FormsModule,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    ChartsModule
   ],
   declarations: [
     DashboardComponent,
@@ -31,7 +35,8 @@ import {TodoService} from '../shared/TodoService/todo.service';
     NotificationsWidgetComponent,
     DataGraphComponent,
     CalendarComponent,
-    TodoComponent
+    TodoComponent,
+    ChartStatsComponent
   ],
   providers: [
     TodoService
