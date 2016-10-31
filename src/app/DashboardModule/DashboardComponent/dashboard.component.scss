@@ -89,16 +89,33 @@ $dashboard-bg-col: color(wild-sand);
 //---dashboard__wrapper-group---
 //------------------------------
 .dashboard__wrapper-group {
-  display: flex !important;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  // display: flex !important;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
   margin-bottom: 0 !important;
 
   > * {
     margin-bottom: 26px;
   }
 
+  > *:first-child {
+    float: left;
+  }
+
+  > *:last-child {
+    float: right;
+  }
+
+  &::after {
+    display: block;
+    height: 0;
+    clear: both;
+    content: '';
+    visibility: hidden;
+	}
+
+
   @media screen and (max-width: 800px) {
-    justify-content: space-around;
+    // justify-content: space-around;
   }
 }
