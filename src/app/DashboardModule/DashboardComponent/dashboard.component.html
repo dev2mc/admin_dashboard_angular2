@@ -1,23 +1,41 @@
 <div class="dashboard">
-  <update [type]='"twitter"' [data]='twitterMentions'></update>
-  <update [type]='"sales"' [data]='sales'></update>
-  <update [type]='"visitors"' [data]='visitors'></update>
-  <update [type]='"messages"' [data]='messages'></update>
+  <div class="dashboard__panel dashboard__panel_pos_top">
+      <update [type]='"twitter"' [data]='twitterMentions'></update>
 
-  <yearly-sales [sales]='yearlySales' [visitors]='yearlyVisitors' [customers]='yearlyCustomers'></yearly-sales>
+      <update [type]='"sales"' [data]='sales'></update>
 
-  <weather [type]='weatherType' [temperature]='weatherTemperature' [location]='weatherLocation'></weather>
+      <update [type]='"visitors"' [data]='visitors'></update>
 
-  <data-widget [type]='"hosting"' [max]='hostingMax' [count]='hostingCount'></data-widget>
-  <data-widget [type]='"email"' [max]='emailMax' [count]='emailCount'></data-widget>
+      <update [type]='"messages"' [data]='messages'></update>
+  </div>
 
-  <notifications-widget [twitter]='notificationsTwitter' [email]='notificationsEmail' [money]='notificationsMoney'></notifications-widget>
+  <div class="dashboard__panels-container">
+    <div class="dashboard__panel dashboard__panel_pos_left">
 
-  <data-graph [earnings]='dataGraphEarnings'></data-graph>
+        <chart-stats [data]='lineChartData' [labels]='lineChartLabels' [colors]='lineChartColors' [legend]='lineChartLegend' [type]='lineChartType'></chart-stats>
 
-  <calendar></calendar>
 
-  <todo></todo>
+        <todo></todo>
 
-  <chart-stats [data]='lineChartData' [labels]='lineChartLabels' [colors]='lineChartColors' [legend]='lineChartLegend' [type]='lineChartType'></chart-stats>
+      <div class="dashboard__wrapper-group">
+          <data-widget [type]='"hosting"' [max]='hostingMax' [count]='hostingCount'></data-widget>
+
+          <data-widget [type]='"email"' [max]='emailMax' [count]='emailCount'></data-widget>
+      </div>
+
+        <notifications-widget [twitter]='notificationsTwitter' [email]='notificationsEmail' [money]='notificationsMoney'></notifications-widget>
+
+    </div>
+
+    <div class="dashboard__panel dashboard__panel_pos_right">
+
+        <yearly-sales [sales]='yearlySales' [visitors]='yearlyVisitors' [customers]='yearlyCustomers'></yearly-sales>
+
+        <weather [type]='weatherType' [temperature]='weatherTemperature' [location]='weatherLocation'></weather>
+
+        <calendar></calendar>
+
+        <data-graph [earnings]='dataGraphEarnings'></data-graph>
+    </div>
+  </div>
 </div>

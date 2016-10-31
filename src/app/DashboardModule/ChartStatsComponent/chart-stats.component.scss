@@ -10,8 +10,7 @@ $dash-cart-stats-broder-rad: 6px;
 //---chart-stats---
 //-----------------
 .chart-stats {
-  width: 617px;
-  // height: 391px;
+  max-width: 617px;
 
   border-radius: $dash-cart-stats-broder-rad;
 

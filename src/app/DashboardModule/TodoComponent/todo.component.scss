@@ -23,8 +23,8 @@ $todo-bord-rad: 6px;
 //----------
 .todo {
   position: relative;
-  // max-width: 620px;
-  width: 620px;
+  max-width: 620px;
+  // width: 620px;
   min-height: 300px;
 
   border-radius: $todo-bord-rad;
@@ -169,7 +169,7 @@ $todo-bord-rad: 6px;
 //-----------------
 .todo__input {
   display: block;
-  min-width: 400px;
+  width: 100%;
   margin-bottom: 20px;
   padding: 1px 20px;
 
