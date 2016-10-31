@@ -97,4 +97,8 @@ $dashboard-bg-col: color(wild-sand);
   > * {
     margin-bottom: 26px;
   }
+
+  @media screen and (max-width: 800px) {
+    justify-content: space-around;
+  }
 }

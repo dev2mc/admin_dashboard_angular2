@@ -106,10 +106,11 @@ $notifications-widget-bord-rad: 6px;
   width: 45px;
   height: 45px;
 
+  transform: translateY(-5px);
+
   border-radius: 50%;
 
   background: rgba($notifications-widget---item, .361);
-  transform: translateY(-5px);
 }
 
 //---notifications-widget__icon-container_bg_twitter---
