@@ -1,0 +1,55 @@
+<div class="mail">
+  <div class="mail__controlls">
+    <h3 class="mail__heading"><span class="mail__heading_fweight_bold">Mail</span>box</h3>
+    <div class="mail__controlls-container" *ngIf='selectedIds.length > 0'>
+      <i class="fa fa-inbox mail__controll-item mail__controll-item_mod_read" aria-hidden="true" (click)='toggleReadGroup()'></i>
+      <i class="fa fa-star mail__controll-item mail__controll-item_mod_starred" aria-hidden="true" (click)='toggleStarredGroup()'></i>
+      <i class="fa fa-trash mail__controll-item mail__controll-item_mod_remove" aria-hidden="true" (click)='deleteMailGroup()'></i>
+      <i class="fa fa-info-circle mail__controll-item mail__controll-item_mod_info" [class.mail__controll-item_mod_show-info]='showInfo' aria-hidden="true" (click)='toggleShowInfo()'></i>
+
+      <div class="dummydiv1" *ngIf='!showInfo'></div>
+
+      <div class="mail__info" (click)='toggleShowInfo()' *ngIf='showInfo'>
+        <p class="mail__info-heading">Info about selected email<span *ngIf='selectedIds.length > 1'>s</span>:</p>
+
+        <p class="mail__info-heading" *ngIf='selectedIds.length > 1'>{{selectedIds.length}} selected emails</p>
+
+        <p class="mail__info-heading" *ngIf='selectedIds.length > 0'>{{getSelectedStarredCount()}} starred email<span *ngIf='getSelectedStarredCount() > 1'>s</span></p>
+
+        <p class="mail__info-heading" *ngIf='selectedIds.length === 1'>{{getMailDateInfo()}}</p>
+
+        <p class="mail__info-heading">{{getUnreadCount()}} unread emails</p>
+      </div>
+
+    </div>
+  </div>
+  <div class="mail__container">
+    <div class="mail__compose-compilation">
+      <span class="mail__compose">compose</span>
+      <div class="mail__pagination-container">
+        <div class="mail__count"><span class="mail__count_fweight_bold">20</span> of <span class="mail__count_fweight_bold">120</span></div>
+        <div class="mail__pagination">
+          <i class="fa fa-chevron-left mail__pagination-item mail__pagination-item_pos_prev" aria-hidden="true"></i>
+          <i class="fa fa-chevron-right mail__pagination-item mail__pagination-item_pos_next" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+    <div class="mail__tabs">
+      <p class="mail__tab mail__tab_is_active"><i class="fa fa-inbox mail__tab-icon" aria-hidden="true"></i>Inbox</p>
+      <p class="mail__tab"><i class="fa fa-paper-plane mail__tab-icon" aria-hidden="true"></i>Sent</p>
+      <p class="mail__tab"><i class="fa fa-star mail__tab-icon" aria-hidden="true"></i>Starred</p>
+    </div>
+
+    <div class="mail__data-container">
+      <div *ngFor='let mail of mails' class='mail__item' [class.mail__item_is_new]='!mail.read'>
+        <i class="fa fa-square" [class.fa-check-square]='showIfSelected(mail._id.$oid)' [class.mail__item-checkbox]='true' aria-hidden="true" (click)='addToSelectedIds(mail._id.$oid)'></i>
+        <i class="fa fa-star mail__item-starred" [class.mail__item-starred_is_true]='mail.starred' aria-hidden="true" (click)='toggleStarred(mail._id.$oid)'></i>
+        <p class="mail__item-category mail__item-category_col_{{mail.category}}">{{mail.category}}</p>
+        <p class="mail__item-sender">{{mail.fromName}}</p>
+        <p class="mail__item-subject">{{mail.subject}}</p>
+        <p class="mail__item-content">{{mail.body}}</p>
+        <p class="mail__item-time">{{getMailTime(mail.date)}}</p>
+      </div>
+    </div>
+  </div>
+</div>

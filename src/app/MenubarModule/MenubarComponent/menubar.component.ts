@@ -20,6 +20,12 @@ interface menuItem {
 export class MenubarComponent implements OnInit {
   menuDataArr: menuItem[] = [
     {
+      icon: 'fa-envelope',
+      name: 'mail',
+      link: 'mail',
+      number: false
+    },
+    {
       icon: 'fa-tachometer',
       name: 'dashboard',
       link: 'dashboard',
@@ -65,12 +71,6 @@ export class MenubarComponent implements OnInit {
       icon: 'fa-share-alt',
       name: 'social',
       link: 'social',
-      number: false
-    },
-    {
-      icon: 'fa-envelope',
-      name: 'mail',
-      link: 'mail',
       number: false
     },
     {

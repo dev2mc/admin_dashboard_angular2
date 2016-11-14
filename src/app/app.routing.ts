@@ -3,12 +3,13 @@ import {Routes, RouterModule} from '@angular/router';
 
 import {TasksComponent} from './TasksModule/TasksComponent/tasks.component';
 import {DashboardComponent} from './DashboardModule/DashboardComponent/dashboard.component';
+import {MailComponent} from './MailModule/MailComponent/mail.component';
 import {NotFoundComponent} from './shared/404Component/404.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/dashboard',
+    redirectTo: '/mail',
     pathMatch: 'full'
   },
   {
@@ -18,6 +19,10 @@ const appRoutes: Routes = [
   {
     path: 'tasks',
     component: TasksComponent
+  },
+  {
+    path: 'mail',
+    component: MailComponent
   },
   {
     path: '404',

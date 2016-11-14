@@ -8,6 +8,7 @@ import {TopbarModule} from './TopbarModule/topbar.module';
 import {MenubarModule} from './MenubarModule/menubar.module';
 import {TasksModule} from './TasksModule/tasks.module';
 import {DashboardModule} from './DashboardModule/dashboard.module';
+import {MailModule} from './MailModule/mail.module';
 
 import {AppComponent} from './app.component';
 import {NotFoundComponent} from './shared/404Component/404.component';
@@ -22,7 +23,8 @@ import {NotFoundComponent} from './shared/404Component/404.component';
     TopbarModule,
     MenubarModule,
     TasksModule,
-    DashboardModule
+    DashboardModule,
+    MailModule
   ],
   declarations: [
     AppComponent,
