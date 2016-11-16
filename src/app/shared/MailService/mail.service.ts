@@ -21,6 +21,14 @@ export class MailService {
       });
   };
 
+  getMail(id: string): Promise<Mail> {
+    return this.http.get(`${this._uri}/${id}?apiKey=${this._apiKey}`, {headers: this.headers})
+      .toPromise()
+      .then((response: any) => {
+        return JSON.parse(response._body);
+      });
+  };
+
   sendMail(task: Mail): Promise<Mail> {
     return this.http.post(`${this._uri}?apiKey=${this._apiKey}`, JSON.stringify(task), {headers: this.headers})
       .toPromise()

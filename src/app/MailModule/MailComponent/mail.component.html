@@ -44,11 +44,11 @@
       <div *ngFor='let mail of mails' class='mail__item' [class.mail__item_is_new]='!mail.read'>
         <i class="fa fa-square" [class.fa-check-square]='showIfSelected(mail._id.$oid)' [class.mail__item-checkbox]='true' aria-hidden="true" (click)='addToSelectedIds(mail._id.$oid)'></i>
         <i class="fa fa-star mail__item-starred" [class.mail__item-starred_is_true]='mail.starred' aria-hidden="true" (click)='toggleStarred(mail._id.$oid)'></i>
-        <p class="mail__item-category mail__item-category_col_{{mail.category}}">{{mail.category}}</p>
-        <p class="mail__item-sender">{{mail.fromName}}</p>
-        <p class="mail__item-subject">{{mail.subject}}</p>
-        <p class="mail__item-content">{{mail.body}}</p>
-        <p class="mail__item-time">{{getMailTime(mail.date)}}</p>
+        <p class="mail__item-category mail__item-category_col_{{mail.category}}" (click)='goToMail(mail._id.$oid)'>{{mail.category}}</p>
+        <p class="mail__item-sender" (click)='goToMail(mail._id.$oid)'>{{mail.fromName}}</p>
+        <p class="mail__item-subject" (click)='goToMail(mail._id.$oid)'>{{mail.subject}}</p>
+        <p class="mail__item-content" (click)='goToMail(mail._id.$oid)'>{{mail.body}}</p>
+        <p class="mail__item-time" (click)='goToMail(mail._id.$oid)'>{{getMailTime(mail.date)}}</p>
       </div>
     </div>
   </div>

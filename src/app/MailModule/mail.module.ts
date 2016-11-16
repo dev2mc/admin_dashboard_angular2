@@ -4,8 +4,10 @@ import {FormsModule}   from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
 
 import {MailComponent} from './MailComponent/mail.component';
+import {ViewMailComponent} from './ViewMailComponent/view-mail.component';
 
 import {MailService} from '../shared/MailService/mail.service';
+import {ViewMailResolveService} from '../shared/ViewMailResolveService/view-mail-resolve.service';
 
 @NgModule({
   imports: [
@@ -15,10 +17,12 @@ import {MailService} from '../shared/MailService/mail.service';
     JsonpModule
   ],
   declarations: [
-    MailComponent
+    MailComponent,
+    ViewMailComponent
   ],
   providers: [
-    MailService
+    MailService,
+    ViewMailResolveService
   ],
   exports: [MailComponent]
 })

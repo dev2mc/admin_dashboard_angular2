@@ -1,5 +1,7 @@
 import {Component, OnInit, ChangeDetectorRef} from '@angular/core';
 
+import {Router} from '@angular/router';
+
 import {MailService} from '../../shared/MailService/mail.service';
 
 import {Mail} from '../../shared/MailObjInterface/mail-obj.interface';
@@ -17,7 +19,11 @@ export class MailComponent implements OnInit {
   selectedIds: string[] = [];
   showInfo: boolean = false;
 
-  constructor(private mailService:MailService, private cd:ChangeDetectorRef){};
+  constructor(
+    private mailService:MailService,
+    private cd:ChangeDetectorRef,
+    private router:Router
+  ){};
 
   ngOnInit(): void {
     this.getMails().then(() => {
@@ -83,7 +89,7 @@ export class MailComponent implements OnInit {
       }
     }
     if (item) {
-      item.read = false;
+      item.read = true;
       return this.mailService.updateMail(item).then((data) => {
         this.mails[itemIndex] = data;
         this.cd.detectChanges();
@@ -244,10 +250,13 @@ export class MailComponent implements OnInit {
     })[0];
 
     let date = new Date(item.date);
-    console.log(date);
     let monthNumber = date.getMonth();
     let action = item.fromName==='you'?'Sent':'Arrived';
 
     return `${action} at: ${monthNames[monthNumber]} ${date.getDate()} ${date.getFullYear()}, ${date.getHours()}:${date.getMinutes()}`;
+  }
+
+  goToMail(id: string):void {
+    this.router.navigate(['/viewmail', id]);
   }
 }
