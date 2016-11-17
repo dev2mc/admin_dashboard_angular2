@@ -1,6 +1,8 @@
 import {TestBed, ComponentFixture, fakeAsync, tick} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 
+import {Router} from '@angular/router';
+
 import {MailModule} from '../mail.module';
 
 import {MailComponent} from './mail.component';
@@ -128,6 +130,10 @@ let MailServiceStub = {
   }
 }
 
+let RouterStub = {
+  navigate: jasmine.createSpy('navigate')
+}
+
 describe('MailComponent: ', () => {
   let fixture: ComponentFixture<MailComponent>;
   let comp: MailComponent;
@@ -138,7 +144,8 @@ describe('MailComponent: ', () => {
         MailModule
       ],
       providers: [
-        {provide: MailService, useValue: MailServiceStub}
+        {provide: MailService, useValue: MailServiceStub},
+        {provide: Router, useValue: RouterStub}
       ]
     });
 

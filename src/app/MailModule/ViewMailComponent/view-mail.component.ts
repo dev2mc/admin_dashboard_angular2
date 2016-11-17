@@ -1,4 +1,4 @@
-import {Component, OnInit, ChangeDetectorRef} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {Router, ActivatedRoute, Params} from '@angular/router';
 
@@ -22,7 +22,6 @@ export class ViewMailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private cd: ChangeDetectorRef,
     private mailService: MailService
   ) {}
 

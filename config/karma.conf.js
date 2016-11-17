@@ -31,7 +31,7 @@ module.exports = function (config) {
     autoWatch: false,
     browsers: ['PhantomJS'],
     singleRun: true,
-    browserNoActivityTimeout: 60000
+    browserNoActivityTimeout: 120000
   };
 
   config.set(_config);
