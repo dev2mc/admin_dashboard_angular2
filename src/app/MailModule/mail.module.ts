@@ -5,6 +5,7 @@ import {HttpModule, JsonpModule} from '@angular/http';
 
 import {MailComponent} from './MailComponent/mail.component';
 import {ViewMailComponent} from './ViewMailComponent/view-mail.component';
+import {ComposeEmailComponent} from './ComposeEmailComponent/compose-email.component';
 
 import {MailService} from '../shared/MailService/mail.service';
 import {ViewMailResolveService} from '../shared/ViewMailResolveService/view-mail-resolve.service';
@@ -18,7 +19,8 @@ import {ViewMailResolveService} from '../shared/ViewMailResolveService/view-mail
   ],
   declarations: [
     MailComponent,
-    ViewMailComponent
+    ViewMailComponent,
+    ComposeEmailComponent
   ],
   providers: [
     MailService,

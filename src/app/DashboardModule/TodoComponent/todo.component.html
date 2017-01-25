@@ -17,7 +17,7 @@
       <h3 class="todo__input-label">Add description for new todo item:</h3>
       <input autofocus type="text" class="todo__input" [(ngModel)]='boilerplateTodo.description' name='addTodoItemDesc' tabindex='1' required>
       <button class="todo__btn todo__btn_is_submit" (click)='addTodo(boilerplateTodo);toggleShowAdd();resetBoilerplateTodo();false' tabindex='2' [disabled]='!addTodoItemForm.form.valid'>Add</button>
-      <button class="todo__btn todo__btn_is_cancel" (click)='toggleShowAdd();resetBoilerplateTodo();false' tabindex='3'>Cancel</button>
+      <button class="todo__btn todo__btn_is_cancel"  (click)='toggleShowAdd();resetBoilerplateTodo();false' tabindex='3'>Cancel</button>
     </form>
   </div>
 </div>

@@ -13,6 +13,8 @@ import {MailModule} from './MailModule/mail.module';
 import {AppComponent} from './app.component';
 import {NotFoundComponent} from './shared/404Component/404.component';
 
+import {DocumentRefService} from './shared/DocumentRefService/document-ref.service';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -26,6 +28,7 @@ import {NotFoundComponent} from './shared/404Component/404.component';
     DashboardModule,
     MailModule
   ],
+  providers: [DocumentRefService],
   declarations: [
     AppComponent,
     NotFoundComponent

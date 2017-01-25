@@ -10,6 +10,7 @@ $color-palette-default: (
   storm-gray: #72747a,
   silver: #c4c4c4,
   silver-col: #c4c4c4,
+  silver-light: #c8c8c8,
   alizarin-crimson: #e52435,
   cadet-blue: #afb5c2,
   charade: #232730,
@@ -18,8 +19,10 @@ $color-palette-default: (
   gallery: #eee,
   dove-gran: #6d6d6d,
   wild-sand: #f6f6f6,
+  wild-sand-dark: #f4f4f4,
   golden-tainoi: #ffc555,
   ship-cove: #7c95be,
+  ship-cove-dark: #6b94b8,
   cornflower-blue: #66b7f0,
   saffron-mango: #f7c055,
   wisteria: #9972b5,
@@ -39,12 +42,16 @@ $color-palette-default: (
   alabaster: #fafafa,
   scorpion: #5f5f5f,
   boulder: #7f7777,
+  boulder-dark: #767676,
   alabaster-dark: #fbfbfb,
   solitude: #e3f2ff,
   nobel: #b3b3b3,
   scorpion-dark: #5a5a5a,
   picton-blue: #4ec4e9,
-  bittersweet: #ff7365
+  bittersweet: #ff7365,
+  catskill-white: #e6edf3,
+  congress-blue: #004b8b,
+  black-col: #000
 );
 
 $color-palette-dark: (
