@@ -61,6 +61,25 @@ export class ViewMailComponent implements OnInit {
     });
   };
 
+  getMailTime(ts: number): string {
+    let currentDate = new Date(Date.now());
+    let mailDate = new Date(ts);
+    let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    if ((currentDate.getDate() === mailDate.getDate()) && (currentDate.getMonth() === mailDate.getMonth()) && (currentDate.getFullYear() === mailDate.getFullYear())) {
+        return `Today, ${mailDate.getHours()}:${mailDate.getMinutes()}`
+    } else {
+      let monthNumber = mailDate.getMonth();
+      return `${monthNames[monthNumber]} ${mailDate.getDate()}, ${mailDate.getHours()}:${mailDate.getMinutes()}`;
+    }
+  };
+
+  deleteMail(id: string):void {
+    this.mailService.deleteMail(id).then(() => {
+      this.goBack();
+    })
+  }
+
   goBack():void {
     this.router.navigate(['/mail']);
   }

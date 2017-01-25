@@ -11,14 +11,9 @@ import {ComposeEmailComponent} from './MailModule/ComposeEmailComponent/compose-
 import {ViewMailResolveService} from './shared/ViewMailResolveService/view-mail-resolve.service';
 
 const appRoutes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: '/mail',
-  //   pathMatch: 'full'
-  // },
   {
     path: '',
-    redirectTo: '/composeemail',
+    redirectTo: '/mail',
     pathMatch: 'full'
   },
   {
