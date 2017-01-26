@@ -34,13 +34,21 @@ export class ViewMailComponent implements OnInit {
   }
 
   markAsRead(): Promise<Mail> {
-    let updatedItem = Object.assign({}, this.mailItem);
-
-    updatedItem.read = true;
     this.mailItem.read = true;
-    return this.mailService.updateMail(updatedItem).then((data) => {
+    return this.mailService.updateMail(this.mailItem).then((data) => {
       return data;
     });
+  }
+
+  markAsUread(): Promise<Mail> {
+    this.mailItem.read = false;
+    return this.mailService.updateMail(this.mailItem).then((data) => {
+      return data;
+    });
+  }
+
+  toggleRead():void {
+    this.mailItem.read === true ? this.markAsUread() : this.markAsRead();
   }
 
   toggleStarred(): Promise<Mail> {
@@ -56,8 +64,9 @@ export class ViewMailComponent implements OnInit {
   resendMail() {
     let resentItem = Object.assign({}, this.mailItem);
     delete resentItem._id;
-    return this.mailService.sendMail(resentItem).then((data) => {
-      return data;
+    resentItem.read = true;
+    this.mailService.sendMail(resentItem).then(() => {
+      this.goBack();
     });
   };
 

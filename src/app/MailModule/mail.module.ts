@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule}   from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
+import {RouterModule} from '@angular/router';
 
 import {MailComponent} from './MailComponent/mail.component';
 import {ViewMailComponent} from './ViewMailComponent/view-mail.component';
@@ -15,7 +16,8 @@ import {ViewMailResolveService} from '../shared/ViewMailResolveService/view-mail
     CommonModule,
     FormsModule,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    RouterModule
   ],
   declarations: [
     MailComponent,

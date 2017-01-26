@@ -1,10 +1,6 @@
 <div class="compose-email">
   <div class="compose-email__controlls">
     <h3 class="compose-email__heading">Compose a new email:</h3>
-    <div class="compose-email__controlls-container">
-      <span class="compose-email__controll"><i class="fa fa-paper-plane compose-email__controll-icon" aria-hidden="true"></i> send</span>
-      <span class="compose-email__controll"><i class="fa fa-times compose-email__controll-icon" aria-hidden="true"></i> cancel</span>
-    </div>
   </div>
   <form class="compose-email__form" novalidate #mailForm="ngForm">
     <div class="compose-email__input-container">
@@ -26,7 +22,7 @@
     </div>
     <div class="compose-email__buttons">
       <button class="compose-email__button compose-email__button_mod_send" [disabled]="!mailForm.form.valid" (click)='sendEmail()'>Send</button>
-      <button class="compose-email__button" (click)='goToMail()'>Cancel</button>
+      <button class="compose-email__button" routerLink='/mail'>Cancel</button>
     </div>
   </form>
 </div>

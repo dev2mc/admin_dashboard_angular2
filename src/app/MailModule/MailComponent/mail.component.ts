@@ -16,6 +16,10 @@ let styles = require('./mail.component.scss');
 })
 export class MailComponent implements OnInit {
   mails: Mail[] = [];
+  inboxMails: Mail[] = [];
+  sentMails: Mail[] = [];
+  strarredMails: Mail[] = [];
+
   selectedIds: string[] = [];
   showInfo: boolean = false;
 
@@ -34,9 +38,46 @@ export class MailComponent implements OnInit {
 
   getMails(): Promise<Mail[]> {
     return this.mailService.getMails().then((data) => {
-      return this.mails = data;
+      let unreadMails = this.sortArrMailsDecent(this.filterUnreadMails(data));
+      let readMails = this.sortArrMailsDecent(this.filterReadMails(data));
+
+      // return this.mails = data;
+      return this.mails = unreadMails.concat(readMails);
     });
   };
+
+  filterReadMails(arr: Mail[]): Mail[] {
+    return arr.filter((v) => {
+      return v.read;
+    })
+  };
+
+  filterUnreadMails(arr: Mail[]): Mail[] {
+    return arr.filter((v) => {
+      return !v.read;
+    })
+  };
+
+  sortArrMailsDecent(arr: Mail[]): Mail[] {
+    return arr.sort((a, b) => {
+      return b.date - a.date;
+    });
+  };
+
+  filterSentMails(arr: Mail[]): Mail[] {
+    return arr.filter((v) => {
+      return v.sent;
+    })
+  }
+
+  filterStarredMails(arr: Mail[]): Mail[] {
+    return arr.filter((v) => {
+      return v.starred;
+    })
+  }
+
+  //----------------------------------------------------------------
+
 
   toggleStarred(id: string): Promise<Mail> {
     let itemIndex: number;
