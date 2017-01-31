@@ -8,7 +8,7 @@ import {Mail} from '../MailObjInterface/mail-obj.interface';
 @Injectable()
 export class ViewMailResolveService implements Resolve<Mail> {
   constructor(private mailService: MailService, private router: Router) {}
-  resolve(route: ActivatedRouteSnapshot): Promise<Mail>|boolean {
+  resolve(route: ActivatedRouteSnapshot): Promise<Mail>|Promise<boolean> {
     let id = route.params['id'];
     return this.mailService.getMail(id).then(mail => {
       if (mail) {

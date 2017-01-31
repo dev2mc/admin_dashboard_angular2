@@ -1,3 +1,5 @@
+declare var require: any
+
 import {Component, OnInit} from '@angular/core';
 
 import {Router, ActivatedRoute, Params} from '@angular/router';

@@ -18,14 +18,9 @@ module.exports = webpackMerge(commonConfig, {
     chunkFilename: '[id].[hash].chunk.js'
   },
 
-  htmlLoader: {
-    minimize: false // workaround for ng2
-  },
-
   plugins: [
-    new webpack.NoErrorsPlugin(),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
       mangle: {
         keep_fnames: true
       }
@@ -46,6 +41,11 @@ module.exports = webpackMerge(commonConfig, {
       },
       pngquant: null, // pngquant is not run unless you pass options here
       plugins: []
+    }),
+    new webpack.LoaderOptionsPlugin({
+      htmlLoader: {
+        minimize: false // workaround for ng2
+      }
     }),
     new webpack.DefinePlugin({
       'process.env': {

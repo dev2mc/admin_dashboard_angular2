@@ -1,21 +1,22 @@
+var webpack = require('webpack');
 var helpers = require('./helpers');
 
 module.exports = {
   devtool: 'inline-source-map',
 
   resolve: {
-    extensions: ['', '.ts', '.js']
+    extensions: ['.ts', '.js']
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.ts$/,
         loaders: ['awesome-typescript-loader', 'angular2-template-loader']
       },
       {
         test: /\.html$/,
-        loader: 'raw'
+        loader: 'raw-loader'
 
       },
       {
@@ -30,8 +31,16 @@ module.exports = {
       {
         test: /\.scss$/,
         include: helpers.root('src', 'app'),
-        loaders: ['css-to-string','css', 'sass']
+        loaders: ['css-to-string-loader','css-loader', 'sass-loader']
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.ContextReplacementPlugin(
+      // The (\\|\/) piece accounts for path separators in *nix and Windows
+      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+      helpers.root('./src'), // location of your src
+      {} // a map of your routes
+    )
+  ]
 };
