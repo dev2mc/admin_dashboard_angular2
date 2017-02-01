@@ -1,6 +1,6 @@
-import {Component, OnInit, ChangeDetectorRef, ElementRef, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, OnDestroy, ChangeDetectorRef, ElementRef, ViewEncapsulation} from '@angular/core';
 
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
 
 import {MailService} from '../../shared/MailService/mail.service';
 import {WindowRefService} from '../../shared/WindowRefService/window-ref.service';
@@ -17,7 +17,7 @@ const styles = require('./compose-email.component.scss');
   styles: [styles],
   encapsulation: ViewEncapsulation.None
 })
-export class ComposeEmailComponent implements OnInit {
+export class ComposeEmailComponent implements OnInit, OnDestroy {
   content: HTMLElement;
   defaultMail: Mail = {
     fromName: 'you',
@@ -33,18 +33,53 @@ export class ComposeEmailComponent implements OnInit {
     openedTimes: 1
   };
 
+  private mailId: string;
+
+  private isResponse: boolean = false;
+
+  private paramSub: any;
+
   constructor(
     private el:ElementRef,
     private router:Router,
+    private aRoute: ActivatedRoute,
     private mailService:MailService
   ) {}
 
   ngOnInit(): void {
+    this.paramSub = this.aRoute.params.subscribe(params => {
+      this.mailId = params['id'];
+
+      if (this.mailId !== 'none') {
+        this.mailService.getMail(this.mailId).then((data) => {
+          this.isResponse = true;
+          this.defaultMail.to = data.fromAddress;
+          this.defaultMail.category = 'response';
+          this.defaultMail.subject = `In respose to: ${data.subject}`;
+          this.defaultMail.body = `---------------------------
+${data.body}
+---------------------------
+`;
+        }).catch((err => console.log(`Email with provided id does not exist: ${err}`)))
+      }
+    }
+  );
+
     this.content = this.el.nativeElement.querySelector('.compose-email__content');
   }
 
+  ngOnDestroy(): void {
+    this.paramSub.unsubscribe();
+  }
+
   goToMail():void {
-    this.router.navigate(['/mail']);
+    this.defaultMail = null;
+
+    if (this.isResponse) {
+      this.router.navigate(['/viewmail', this.mailId]);
+    } else {
+      this.router.navigate(['/mail']);
+    }
   }
 
   sendEmail(): void {

@@ -29,7 +29,7 @@ const appRoutes: Routes = [
     component: MailComponent
   },
   {
-    path: 'composeemail',
+    path: 'composeemail/:id',
     component: ComposeEmailComponent
   },
   {

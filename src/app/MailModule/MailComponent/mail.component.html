@@ -4,7 +4,7 @@
   </div>
   <div class="mail__container">
     <div class="mail__compose-compilation">
-      <span class="mail__compose" routerLink='/composeemail'>compose</span>
+      <span class="mail__compose" routerLink='/composeemail/none'>compose</span>
       <div class="mail__pagination-container" *ngIf='!!list.mailsCount'>
         <div class="mail__count"><span class="mail__count_fweight_bold">{{list.splitMailsArr[list.currentCount].length + ((list.currentCount)*20)}}</span> of <span class="mail__count_fweight_bold">{{list.mailsCount}}</span></div>
         <div class="mail__pagination">

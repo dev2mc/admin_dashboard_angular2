@@ -9,7 +9,7 @@
     </div>
     <div class="compose-email__input-container">
       <span class="compose-email__label">to</span>
-      <input class='compose-email__input' type="email" name='mailTo' [(ngModel)]='defaultMail.to' required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+      <input class='compose-email__input' type="email" name='mailTo' [(ngModel)]='defaultMail.to' required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" [disabled]='isResponse'>
     </div>
     <div class="compose-email__input-container">
       <input class='compose-email__input' type="text" name='mailSubject' placeholder="add a subject" [(ngModel)]='defaultMail.subject'>
@@ -22,7 +22,7 @@
     </div>
     <div class="compose-email__buttons">
       <button class="compose-email__button compose-email__button_mod_send" [disabled]="!mailForm.form.valid" (click)='sendEmail()'>Send</button>
-      <button class="compose-email__button" routerLink='/mail'>Cancel</button>
+      <button class="compose-email__button" (click)='goToMail()'>Cancel</button>
     </div>
   </form>
 </div>

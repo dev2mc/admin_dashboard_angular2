@@ -7,8 +7,8 @@
       <p class="view-mail__data">{{getMailTime(mailItem.date)}}</p>
     </div>
 
-    <span class="view-mail__respond" *ngIf='mailItem.fromName!=="you"'>Respond</span>
-    <span class="view-mail__respond" *ngIf='mailItem.fromName==="you"' (click)='resendMail()'>Resend</span>
+    <span class="view-mail__respond" *ngIf='mailItem.fromName!=="you"' [routerLink]="['/composeemail', mailItem._id.$oid]">Respond</span>
+    <span class="view-mail__respond" *ngIf='mailItem.fromName==="you"' (click)='resentMail()'>Resend</span>
   </div>
   <p class="view-mail__category">Category: {{mailItem.category}}</p>
   <p class="view-mail__body" [innerHTML]='mailItem.body'></p>

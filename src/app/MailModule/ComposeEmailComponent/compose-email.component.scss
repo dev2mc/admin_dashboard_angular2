@@ -169,6 +169,10 @@ $compose-email---select-textcol-item--with--border: color(silver-col);
   &:focus {
     outline: none;
   }
+
+  &:disabled {
+    background: none;
+  }
 }
 
 //---compose-email__content-container---

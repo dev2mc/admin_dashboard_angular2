@@ -63,7 +63,7 @@ export class ViewMailComponent implements OnInit {
     })
   };
 
-  resendMail() {
+  resentMail() {
     let resentItem = Object.assign({}, this.mailItem);
     delete resentItem._id;
     resentItem.read = true;
