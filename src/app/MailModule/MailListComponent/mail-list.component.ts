@@ -43,13 +43,7 @@ export class MailListComponent implements OnInit, OnChanges {
     }
   }
 
-  ngOnInit(): void {
-    // console.log(this.type);
-    // this.getMails().then(() => {
-    //   this.getUnreadCount();
-    // })
-
-  };
+  ngOnInit(): void {};
 
   getMails(type: string): Promise<Mail[]> {
     return this.mailService.getMails().then((data) => {
@@ -152,7 +146,6 @@ export class MailListComponent implements OnInit, OnChanges {
   }
 
   //----------------------------------------------------------------
-
 
   toggleStarred(id: string): Promise<Mail> {
     let itemIndex: number;
@@ -294,22 +287,6 @@ export class MailListComponent implements OnInit, OnChanges {
       return `${monthNames[monthNumber]} ${mailDate.getDate()}`
     }
   };
-
-  getMailDateInfo() {
-    let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-    let itemId = this.selectedIds[0];
-
-    let item = this.mails.filter((v) => {
-      return v._id.$oid === itemId;
-    })[0];
-
-    let date = new Date(item.date);
-    let monthNumber = date.getMonth();
-    let action = item.fromName==='you'?'Sent':'Arrived';
-
-    return `${action} at: ${monthNames[monthNumber]} ${date.getDate()} ${date.getFullYear()}, ${date.getHours()}:${date.getMinutes()}`;
-  }
 
   goToMail(id: string):void {
     this.router.navigate(['/viewmail', id]);

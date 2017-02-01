@@ -1,27 +1,6 @@
 <div class="mail">
   <div class="mail__controlls">
     <h3 class="mail__heading"><span class="mail__heading_fweight_bold">Mail</span>box</h3>
-    <!-- <div class="mail__controlls-container" *ngIf='selectedIds.length > 0'>
-      <i class="fa fa-inbox mail__controll-item mail__controll-item_mod_read" aria-hidden="true" (click)='toggleReadGroup()'></i>
-      <i class="fa fa-star mail__controll-item mail__controll-item_mod_starred" aria-hidden="true" (click)='toggleStarredGroup()'></i>
-      <i class="fa fa-trash mail__controll-item mail__controll-item_mod_remove" aria-hidden="true" (click)='deleteMailGroup()'></i>
-      <i class="fa fa-info-circle mail__controll-item mail__controll-item_mod_info" [class.mail__controll-item_mod_show-info]='showInfo' aria-hidden="true" (click)='toggleShowInfo()'></i>
-
-      <div class="dummydiv1" *ngIf='!showInfo'></div>
-
-      <div class="mail__info" (click)='toggleShowInfo()' *ngIf='showInfo'>
-        <p class="mail__info-heading">Info about selected email<span *ngIf='selectedIds.length > 1'>s</span>:</p>
-
-        <p class="mail__info-heading" *ngIf='selectedIds.length > 1'>{{selectedIds.length}} selected emails</p>
-
-        <p class="mail__info-heading" *ngIf='selectedIds.length > 0'>{{getSelectedStarredCount()}} starred email<span *ngIf='getSelectedStarredCount() > 1'>s</span></p>
-
-        <p class="mail__info-heading" *ngIf='selectedIds.length === 1'>{{getMailDateInfo()}}</p>
-
-        <p class="mail__info-heading">{{getUnreadCount()}} unread emails</p>
-      </div>
-
-    </div> -->
   </div>
   <div class="mail__container">
     <div class="mail__compose-compilation">
