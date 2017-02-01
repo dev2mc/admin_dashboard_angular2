@@ -13,7 +13,7 @@ import {ViewMailResolveService} from './shared/ViewMailResolveService/view-mail-
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/mail',
+    redirectTo: '/dashboard',
     pathMatch: 'full'
   },
   {

@@ -20,15 +20,15 @@ interface menuItem {
 export class MenubarComponent implements OnInit {
   menuDataArr: menuItem[] = [
     {
-      icon: 'fa-envelope',
-      name: 'mail',
-      link: 'mail',
-      number: false
-    },
-    {
       icon: 'fa-tachometer',
       name: 'dashboard',
       link: 'dashboard',
+      number: false
+    },
+    {
+      icon: 'fa-envelope',
+      name: 'mail',
+      link: 'mail',
       number: false
     },
     {

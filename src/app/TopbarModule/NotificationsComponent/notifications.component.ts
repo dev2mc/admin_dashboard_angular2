@@ -33,7 +33,7 @@ export class NotificationsComponent implements OnInit {
       },
       {
         type: 'email',
-        link: 'email',
+        link: 'mail',
         quantity: 1
       }
     ];
